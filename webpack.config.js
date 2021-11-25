@@ -2,6 +2,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const sveltePreprocess = require('svelte-preprocess')
 const path = require('path');
 
 const mode = process.env.NODE_ENV || 'development';
@@ -32,12 +33,15 @@ let options = {
             },
             emitCss: prod,
             hotReload: !prod,
+            preprocess: sveltePreprocess({
+              postcss: true,
+            }),
           },
         },
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         // required to prevent errors from Svelte on Webpack 5+

@@ -10,7 +10,10 @@
     "64": "./assets/icons/icon64.png",
     "128": "./assets/icons/icon128.png"
   },
-  "permissions": [],
+  "permissions": ["cookies"],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "options_page": "options.html",
   "action": {
     "default_popup": "popup.html",
