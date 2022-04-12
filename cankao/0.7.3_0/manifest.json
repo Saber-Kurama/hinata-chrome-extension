@@ -1,38 +1,38 @@
 {
-   "background": {
-      "persistent": true,
-      "scripts": [ "static/background.js" ]
-   },
-   "browser_action": {
-      "default_icon": {
-         "19": "static/icons/icon-19.png",
-         "38": "static/icons/icon-38.png"
-      },
-      "default_popup": "main.html#/popup",
-      "default_title": "稀土掘金"
-   },
-   "chrome_url_overrides": {
-      "newtab": "main.html"
-   },
-   "content_scripts": [ {
-      "js": [ "static/content-script.js" ],
-      "matches": [ "\u003Call_urls>" ]
-   } ],
-   "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com https://*.bytegoofy.com https://*.bytescm.com https://*.pstatp.com; object-src 'self'",
-   "description": "为程序员、设计师、产品经理每日发现优质内容。",
-   "differential_fingerprint": "1.0d748b784188f46e8332db32e4000be6cf6f222aa16849e3835cf20269fe1ebf",
-   "icons": {
-      "128": "static/icons/icon-128.png",
-      "16": "static/icons/icon-16.png",
-      "48": "static/icons/icon-48.png"
-   },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhzxri4sUYh5US3hrGsZOd1hsrPxW7kDNVXpb0Z5HqMiqQcLt0Ub+d3h6nT7uKkeEzgcmKbKp2aPzkU7ZsYt+e4Vg9jEtMF0x9qGpJKS6RRi+P/7GmKjd+t0UQ/MHpJNFmLXOFw6n4ys4IfbeVv8wd/55fAAgAknsP7yQPCeTbWiKNbYRFzTeorJRsq5KF74GtSyTE509uqi5MvMD3FWlpkwI9x8YrrziPDercpCE1P/EAcscEqnf8MXPMG08Ga/Fd5otC15z/QdEZDY4VDrCuSXJwXGAV9R9rE6rqCazkt53geLdk+fjSDLQghcGc2TGNH6x4sB3ebtToS9FrvxUUwIDAQAB",
-   "manifest_version": 2,
-   "name": "稀土掘金",
-   "offline_enabled": true,
-   "permissions": [ "storage", "cookies", "contextMenus", "tabs", "alarms", "http://*/", "https://*/" ],
-   "short_name": "稀土掘金",
-   "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "0.7.3",
-   "web_accessible_resources": [ "*" ]
+	"background": {
+		"persistent": true,
+		"scripts": ["static/background.js"]
+	},
+	"browser_action": {
+		"default_icon": {
+			"19": "static/icons/icon-19.png",
+			"38": "static/icons/icon-38.png"
+		},
+		"default_popup": "main.html#/popup",
+		"default_title": "稀土掘金"
+	},
+	"chrome_url_overrides": {
+		"newtab": "main.html"
+	},
+	"content_scripts": [{
+		"js": ["static/content-script.js"],
+		"matches": ["\u003Call_urls>"]
+	}],
+	"content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com https://*.bytegoofy.com https://*.bytescm.com https://*.pstatp.com; object-src 'self'",
+	"description": "为程序员、设计师、产品经理每日发现优质内容。",
+	"differential_fingerprint": "1.0d748b784188f46e8332db32e4000be6cf6f222aa16849e3835cf20269fe1ebf",
+	"icons": {
+		"128": "static/icons/icon-128.png",
+		"16": "static/icons/icon-16.png",
+		"48": "static/icons/icon-48.png"
+	},
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhzxri4sUYh5US3hrGsZOd1hsrPxW7kDNVXpb0Z5HqMiqQcLt0Ub+d3h6nT7uKkeEzgcmKbKp2aPzkU7ZsYt+e4Vg9jEtMF0x9qGpJKS6RRi+P/7GmKjd+t0UQ/MHpJNFmLXOFw6n4ys4IfbeVv8wd/55fAAgAknsP7yQPCeTbWiKNbYRFzTeorJRsq5KF74GtSyTE509uqi5MvMD3FWlpkwI9x8YrrziPDercpCE1P/EAcscEqnf8MXPMG08Ga/Fd5otC15z/QdEZDY4VDrCuSXJwXGAV9R9rE6rqCazkt53geLdk+fjSDLQghcGc2TGNH6x4sB3ebtToS9FrvxUUwIDAQAB",
+	"manifest_version": 2,
+	"name": "稀土掘金",
+	"offline_enabled": true,
+	"permissions": ["storage", "cookies", "contextMenus", "tabs", "alarms", "http://*/", "https://*/"],
+	"short_name": "稀土掘金",
+	"update_url": "https://clients2.google.com/service/update2/crx",
+	"version": "0.7.3",
+	"web_accessible_resources": ["*"]
 }

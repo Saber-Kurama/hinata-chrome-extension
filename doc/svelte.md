@@ -20,3 +20,5 @@ https://github.com/borntofrappe/svelte-tutorial
 live2d 
 
 https://octodex.github.com/
+
+https://developer.chrome.com/docs/extensions/
