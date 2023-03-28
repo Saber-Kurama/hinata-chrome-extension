@@ -8,23 +8,33 @@
   // 从ums的登录地址域名中 拷贝 cookies 到 本地开发环境
   const copyUmsCookies = async () => {
     const res = await chrome.storage.sync.get("umsDomain");
-    console.log('res---', res)
+    console.log("res---", res);
     const cookies = await chrome.cookies.getAll({ domain: res.umsDomain });
-    console.log('cookiescookies', cookies)
-    let pending = cookies.filter((cookie) => !cookie.hostOnly).map(copyLoacalCookies);
+    console.log("cookiescookies", cookies);
+    let pending = cookies
+      .filter((cookie) => !cookie.hostOnly)
+      .map(copyLoacalCookies);
     await Promise.all(pending);
-  }
+  };
   const copyLoacalCookies = async (cookie) => {
-    const {hostOnly, session, ...resetProp} = cookie;
-	  try {
-		  await chrome.cookies.set({ ...resetProp, domain: 'localhost', url:'http://localhost:3000' });
-      await chrome.cookies.set({ ...resetProp, domain: '127.0.0.1', url:'http://127.0.0.1:3000' });
-      return '' 
-	  } catch (error) {
-		  console.log(error)
-      return ''
-	  }
-  }
+    const { hostOnly, session, ...resetProp } = cookie;
+    try {
+      await chrome.cookies.set({
+        ...resetProp,
+        domain: "localhost",
+        url: "http://localhost:3000",
+      });
+      await chrome.cookies.set({
+        ...resetProp,
+        domain: "127.0.0.1",
+        url: "http://127.0.0.1:3000",
+      });
+      return "";
+    } catch (error) {
+      console.log(error);
+      return "";
+    }
+  };
   const getDomainCookies = async () => {};
   export let name;
 </script>
@@ -83,6 +93,7 @@
       >
     </li>
     <li>
+      <!-- svelte-ignore a11y-missing-attribute -->
       <a>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -101,6 +112,7 @@
       </a>
     </li>
     <li>
+      <!-- svelte-ignore a11y-missing-attribute -->
       <a>
         <svg
           xmlns="http://www.w3.org/2000/svg"
