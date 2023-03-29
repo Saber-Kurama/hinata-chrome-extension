@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-svelte-bolierplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A boilerplate for chrome extension with svelte",
   "manifest_version": 3,
   "icons": {
@@ -10,10 +10,8 @@
     "64": "./assets/icons/icon64.png",
     "128": "./assets/icons/icon128.png"
   },
-  "permissions": ["cookies", "storage"],
-  "host_permissions": [
-    "<all_urls>"
-  ],
+  "permissions": ["cookies", "storage", "activeTab"],
+  "host_permissions": ["<all_urls>"],
   "options_page": "options.html",
   "action": {
     "default_popup": "popup.html",
@@ -31,7 +29,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://arco.design/iconbox/mime/*/*"],
+      "matches": [
+        "https://arco.design/iconbox/mime/lib/496/*",
+        "https://arco.design/iconbox/lib/496/*"
+      ],
       "js": ["content-scripts.js"]
     }
   ],

@@ -1,6 +1,6 @@
 {
   "name": "hinata-chrome-extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "chrome 插件",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,9 @@
     "start": "npm run watch && webpack serve"
   },
   "dependencies": {
+    "@octokit/rest": "^18.12.0",
     "axios": "^0.27.2",
-    "@octokit/rest": "^18.12.0"
+    "svgo": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

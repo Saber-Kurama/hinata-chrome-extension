@@ -1,42 +1,46 @@
 <script>
-  const cookieHandle = () => {
-    console.log("???");
-  };
-  let domain = "";
-  let port = "";
-
+  // const cookieHandle = () => {
+  //   console.log("???");
+  // };
+  // let domain = "";
+  // let port = "";
+  console.log("??xxx");
   // 从ums的登录地址域名中 拷贝 cookies 到 本地开发环境
   const copyUmsCookies = async () => {
+    chrome.storage.sync.get("http://dev.digitforce.com/", function (result) {
+      console.log(`Get->Key ':`, result["http://dev.digitforce.com/"]);
+      // callback(result[key]);
+    });
     const res = await chrome.storage.sync.get("umsDomain");
     console.log("res---", res);
     const cookies = await chrome.cookies.getAll({ domain: res.umsDomain });
     console.log("cookiescookies", cookies);
-    let pending = cookies
-      .filter((cookie) => !cookie.hostOnly)
-      .map(copyLoacalCookies);
-    await Promise.all(pending);
+    chrome.storage.local;
+    // let pending = cookies
+    //   .filter((cookie) => !cookie.hostOnly)
+    //   .map(copyLoacalCookies);
+    // await Promise.all(pending);
   };
-  const copyLoacalCookies = async (cookie) => {
-    const { hostOnly, session, ...resetProp } = cookie;
-    try {
-      await chrome.cookies.set({
-        ...resetProp,
-        domain: "localhost",
-        url: "http://localhost:3000",
-      });
-      await chrome.cookies.set({
-        ...resetProp,
-        domain: "127.0.0.1",
-        url: "http://127.0.0.1:3000",
-      });
-      return "";
-    } catch (error) {
-      console.log(error);
-      return "";
-    }
-  };
-  const getDomainCookies = async () => {};
-  export let name;
+  // const copyLoacalCookies = async (cookie) => {
+  //   const { hostOnly, session, ...resetProp } = cookie;
+  //   try {
+  //     await chrome.cookies.set({
+  //       ...resetProp,
+  //       domain: "localhost",
+  //       url: "http://localhost:3000",
+  //     });
+  //     await chrome.cookies.set({
+  //       ...resetProp,
+  //       domain: "127.0.0.1",
+  //       url: "http://127.0.0.1:3000",
+  //     });
+  //     return "";
+  //   } catch (error) {
+  //     console.log(error);
+  //     return "";
+  //   }
+  // };
+  // const getDomainCookies = async () => {};
 </script>
 
 <main>
@@ -89,7 +93,7 @@
             d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
           />
         </svg>
-        同步 ums cookie</a
+        同步 dev cookie</a
       >
     </li>
     <li>
