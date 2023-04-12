@@ -16,7 +16,6 @@
     // );
     const result = await optimize(svgString, {});
     const optimizedSvgString = result.data;
-    console.log("optimizedSvgString", optimizedSvgString);
     svgInfo.body = optimizedSvgString
       .replace(/^<svg[^>]*?>/, "")
       .replace(/<\/svg>$/, "");
@@ -41,7 +40,6 @@
     const checkedElements = document.getElementsByClassName(
       "iconbox-icon-box-checked-117Lh"
     );
-    console.log("checkedElements", checkedElements);
     const asyncSvg = [];
     Array.from(checkedElements).forEach((element) => {
       const svgEle = element.querySelector(

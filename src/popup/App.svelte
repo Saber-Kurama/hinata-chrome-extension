@@ -23,11 +23,8 @@
   };
   // 从ums的登录地址域名中 拷贝 cookies 到 本地开发环境
   const copyUmsCookies = async () => {
-    console.log("copyUmsCookies");
     const res = await chrome.storage.sync.get("umsDomain");
-    console.log("res", res);
     const cookies = await chrome.cookies.getAll({ domain: res.umsDomain });
-    console.log("cookie", cookies);
     let pending = cookies
       .filter((cookie) => !cookie.hostOnly)
       .map(copyLoacalCookies);
@@ -35,7 +32,6 @@
   };
   const copyLoacalCookies = async (cookie) => {
     const { hostOnly, session, ...resetProp } = cookie;
-    console.log("resetProp", resetProp);
     try {
       await chrome.cookies.set({
         ...resetProp,

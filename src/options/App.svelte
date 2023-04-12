@@ -6,10 +6,8 @@
     umsDomain = res.umsDomain || "";
   });
   const changeUmsDomain = async () => {
-    console.log("umsDomainumsDomain", umsDomain);
     await chrome.storage.sync.set({ umsDomain });
     const res = await chrome.storage.sync.get("umsDomain");
-    console.log("umsDomainumsDomainedd", res);
   };
   export let name;
 </script>

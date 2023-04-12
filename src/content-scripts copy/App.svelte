@@ -1,20 +1,14 @@
-<style>
-</style>
-
 <script>
   // https://digit-force.coding.net/dashboard
 
-  console.log("content scripts");
   import axios from "axios";
   import { Octokit } from "@octokit/rest";
 
   const octokit = new Octokit({
-    auth: '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'
-  })
+    auth: "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",
+  });
   // 'origin': 'https://arco.design',
   const handleClick = async () => {
-    console.log("???xxx");
-
     const data1 = axios.post(
       "https://api.github.com/repos/Saber-Kurama/digitforce-icons/actions/workflows/26619192/dispatches",
       // {
@@ -23,24 +17,26 @@
       //   Revision: "master",
       // },
       {
-        ref: "main"
+        ref: "main",
       },
       {
         headers: {
-          authorization: 'token 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',
-          accept: 'application/vnd.github.v3+json',
-'origin': 'https://arco.design',
+          authorization: "token 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",
+          accept: "application/vnd.github.v3+json",
+          origin: "https://arco.design",
         },
         // withCredentials: true
       }
     );
-    const data = await octokit.request('POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches', {
-      owner: 'Saber-Kurama',
-      repo: 'digitforce-icons',
-      workflow_id: '26619192',
-      ref: 'main'
-    })
-    console.log('data---', data);
+    const data = await octokit.request(
+      "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
+      {
+        owner: "Saber-Kurama",
+        repo: "digitforce-icons",
+        workflow_id: "26619192",
+        ref: "main",
+      }
+    );
   };
 </script>
 
@@ -63,4 +59,5 @@
   >
 </div>
 
-
+<style>
+</style>
