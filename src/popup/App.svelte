@@ -4,7 +4,6 @@
   // };
   // let domain = "";
   // let port = "";
-  console.log("??xxx");
   // 从ums的登录地址域名中 拷贝 cookies 到 本地开发环境
   const copyUmsCookies1 = async () => {
     chrome.storage.sync.get("http://dev.digitforce.com/", function (result) {
@@ -23,10 +22,12 @@
   };
   // 从ums的登录地址域名中 拷贝 cookies 到 本地开发环境
   const copyUmsCookies = async () => {
+    console.log('copyUmsCookies')
     const res = await chrome.storage.sync.get("umsDomain");
     const cookies = await chrome.cookies.getAll({ domain: res.umsDomain });
+    console.log('cookies', cookies)
     let pending = cookies
-      .filter((cookie) => !cookie.hostOnly)
+      // .filter((cookie) => !cookie.hostOnly)
       .map(copyLoacalCookies);
     await Promise.all(pending);
   };
